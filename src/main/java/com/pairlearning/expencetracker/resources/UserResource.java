@@ -34,10 +34,7 @@ public class UserResource {
 
         User user = userService.validateUser(email, password);
 
-        Map<String, String> map = new HashMap<>();
-        map.put("message", "successfully logged in");
-
-        return new ResponseEntity<>(map, HttpStatus.OK);
+        return new ResponseEntity<>(generateJWTToken(user), HttpStatus.OK);
     }
 
     @PostMapping("/register")
@@ -49,10 +46,7 @@ public class UserResource {
 
         User user = userService.registerUser(firstName, lastName, email, password);
 
-        Map<String, String> map = new HashMap<>();
-        map.put("message", "registered successfully");
-
-        return new ResponseEntity<>(map, HttpStatus.OK);
+        return new ResponseEntity<>(generateJWTToken(user), HttpStatus.OK);
     }
 
     private Map<String, String> generateJWTToken(User user) {
