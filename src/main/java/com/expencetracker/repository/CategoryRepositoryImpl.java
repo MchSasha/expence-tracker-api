@@ -19,8 +19,8 @@ import java.util.Objects;
 public class CategoryRepositoryImpl implements CategoryRepository{
 
     private static final String SQL_CREATE = "INSERT INTO ET_CATEGORIES(CATEGORY_ID, USER_ID, TITLE, DESCRIPTION) VALUES(NEXTVAL('ET_CATEGORIES_SEQ'), ?, ?, ?)";
-
-    private static final String SQL_FIND_BY_ID =  "SELECT C.CATEGORY_ID, C.USER_ID, C.TITLE, C.DESCRIPTION, COALESCE(SUM(T.AMOUNT), 0) TOTAL_EXPENSE " +
+    private static final String SQL_FIND_BY_ID =
+            "SELECT C.CATEGORY_ID, C.USER_ID, C.TITLE, C.DESCRIPTION, COALESCE(SUM(T.AMOUNT), 0) TOTAL_EXPENSE " +
             "FROM ET_TRANSACTIONS T " +
             "RIGHT OUTER JOIN ET_CATEGORIES C " +
             "ON C.CATEGORY_ID = T.CATEGORY_ID " +
