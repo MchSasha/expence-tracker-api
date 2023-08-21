@@ -36,6 +36,7 @@ public class CategoryRepositoryImpl implements CategoryRepository{
                     "WHERE C.USER_ID = ?" +
                     "GROUP BY C.CATEGORY_ID";
 
+    public static final String SQL_UPDATE = "UPDATE ET_CATEGORIES SET DESCRIPTION = ?, TITLE = ? WHERE USER_ID = ? AND CATEGORY_ID = ?";
 
     @Autowired
     JdbcTemplate jdbcTemplate;
@@ -93,6 +94,12 @@ public class CategoryRepositoryImpl implements CategoryRepository{
     @Override
     public void update(Integer userId, Integer categoryId, Category category) throws EtBadRequestException {
 
+        try {
+            jdbcTemplate.update(SQL_UPDATE, category.getDescription(), category.getTitle(), userId, categoryId);
+
+        } catch (Exception e) {
+            throw new EtBadRequestException("invalid request");
+        }
     }
 
     @Override

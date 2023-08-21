@@ -36,7 +36,11 @@ public class CategoryServiceImpl implements CategoryService{
 
     @Override
     public void updateCategory(Integer userId, Integer categoryId, Category category) throws EtBadRequestException {
-
+        try {
+            categoryRepository.update(userId, categoryId, category);
+        } catch (Exception e) {
+            throw new EtBadRequestException("Invalid request");
+        }
     }
 
     @Override

@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -43,11 +44,23 @@ public class CategoryResource {
     }
 
     @GetMapping("/{categoryId}")
-    public ResponseEntity<Category> getCategoryById(HttpServletRequest request, @PathVariable ("categoryId") Integer categoryId) {
+    public ResponseEntity<Category> getCategoryById(HttpServletRequest request, @PathVariable("categoryId") Integer categoryId) {
         Integer userId = (Integer) request.getAttribute("userId");
 
         Category category = categoryService.fetchCategoryById(userId, categoryId);
 
         return new ResponseEntity<>(category, HttpStatus.OK);
+    }
+
+    @PutMapping("/{categoryId}")
+    public ResponseEntity<Map<String, Boolean>> updateCategory(HttpServletRequest request, @PathVariable("categoryId") Integer categoryId, @RequestBody Category category) {
+        Integer userId = (Integer) request.getAttribute("userId");
+
+        categoryService.updateCategory(userId, categoryId, category);
+
+        Map<String, Boolean> map = new HashMap<>();
+        map.put("success", true);
+
+        return new ResponseEntity<>(map, HttpStatus.OK);
     }
 }
