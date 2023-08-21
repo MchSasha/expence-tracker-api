@@ -1,7 +1,7 @@
-package com.pairlearning.expencetracker.repository;
+package com.expencetracker.repository;
 
-import com.pairlearning.expencetracker.entity.User;
-import com.pairlearning.expencetracker.exceptions.EtAuthException;
+import com.expencetracker.entity.User;
+import com.expencetracker.exceptions.EtAuthException;
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;

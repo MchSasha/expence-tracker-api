@@ -1,4 +1,4 @@
-package com.pairlearning.expencetracker;
+package com.expencetracker;
 
 public class Constants {
     public static final String API_SECRET_KEY = "expensetrackerapikey";

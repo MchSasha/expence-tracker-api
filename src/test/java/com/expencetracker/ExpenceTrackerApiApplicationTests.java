@@ -1,4 +1,4 @@
-package com.pairlearning.expencetracker;
+package com.expencetracker;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

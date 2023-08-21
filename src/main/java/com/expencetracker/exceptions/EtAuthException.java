@@ -1,4 +1,4 @@
-package com.pairlearning.expencetracker.exceptions;
+package com.expencetracker.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

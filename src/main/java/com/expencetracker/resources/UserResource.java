@@ -1,10 +1,8 @@
-package com.pairlearning.expencetracker.resources;
+package com.expencetracker.resources;
 
-import com.fasterxml.jackson.databind.ser.impl.UnknownSerializer;
-import com.pairlearning.expencetracker.Constants;
-import com.pairlearning.expencetracker.entity.User;
-import com.pairlearning.expencetracker.services.UserService;
-import io.jsonwebtoken.Jwt;
+import com.expencetracker.Constants;
+import com.expencetracker.entity.User;
+import com.expencetracker.services.UserService;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Date;
 import java.util.HashMap;
-import java.util.Locale;
 import java.util.Map;
 
 @RestController

@@ -1,4 +1,4 @@
-package com.pairlearning.expencetracker.entity;
+package com.expencetracker.entity;
 
 public class User {
     private Integer userId;

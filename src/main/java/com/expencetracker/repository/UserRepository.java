@@ -1,7 +1,7 @@
-package com.pairlearning.expencetracker.repository;
+package com.expencetracker.repository;
 
 
-import com.pairlearning.expencetracker.entity.User;
+import com.expencetracker.entity.User;
 
 public interface UserRepository {
     Integer create(String firstName, String lastName, String email, String password);

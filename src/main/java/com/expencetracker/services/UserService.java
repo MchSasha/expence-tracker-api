@@ -1,7 +1,7 @@
-package com.pairlearning.expencetracker.services;
+package com.expencetracker.services;
 
-import com.pairlearning.expencetracker.entity.User;
-import com.pairlearning.expencetracker.exceptions.EtAuthException;
+import com.expencetracker.entity.User;
+import com.expencetracker.exceptions.EtAuthException;
 
 public interface UserService {
 

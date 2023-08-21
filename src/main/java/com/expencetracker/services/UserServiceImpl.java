@@ -1,8 +1,8 @@
-package com.pairlearning.expencetracker.services;
+package com.expencetracker.services;
 
-import com.pairlearning.expencetracker.entity.User;
-import com.pairlearning.expencetracker.exceptions.EtAuthException;
-import com.pairlearning.expencetracker.repository.UserRepository;
+import com.expencetracker.entity.User;
+import com.expencetracker.exceptions.EtAuthException;
+import com.expencetracker.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
